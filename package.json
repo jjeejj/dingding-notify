@@ -4,7 +4,9 @@
   "description": "钉钉通知",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autod": "autod",
+    "build": "rm -rf dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,11 @@
   },
   "homepage": "https://github.com/jjeejj/dingding-notify#readme",
   "devDependencies": {
+    "@types/superagent": "^4.1.10",
     "autod": "^3.1.1",
     "jest": "^26.6.3"
   },
   "dependencies": {
-
+    "superagent": "^6.1.0"
   }
 }
