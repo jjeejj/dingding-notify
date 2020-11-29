@@ -2,6 +2,18 @@
 
 钉钉通知
 
+### 安装
+
+```bash
+npm i dingding-notify
+```
+
+或者
+
+```bash
+yarn add dingding-notify
+```
+
 ### 使用方法
 
 ```typescript
