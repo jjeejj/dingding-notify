@@ -1,12 +1,12 @@
 // 消息通知类型
 // type MsgType =  "text" | "link"  | "markdown"  | "actionCard" | "feedCard";
-enum MsgTypeEnum {
-    "text" ,
-    "link" ,
-    "markdown" ,
-    "actionCard" ,
-    "feedCard",
-}
+// enum MsgTypeEnum {
+//     "text" ,
+//     "link" ,
+//     "markdown" ,
+//     "actionCard" ,
+//     "feedCard",
+// }
 
 // 消息  @ 谁的 数据结构
 interface At {
@@ -16,7 +16,7 @@ interface At {
 
 // 文本 text 消息类型
 type TextMsgType = {
-    msgtype: MsgTypeEnum.text;
+    msgtype: "text";
     text: TextContent;
     at?: At;
 }
@@ -28,7 +28,7 @@ interface TextContent {
 
 // 链接 link 消息类型
 type LinkMsgType = {
-    msgtype: MsgTypeEnum.link;
+    msgtype: "link";
     link: LinkContent;
 }
 // 链接 link 消息内容
@@ -41,7 +41,7 @@ interface LinkContent {
 
 // markdown 消息类型
 type MarkdowmMsgType = {
-    msgtype: MsgTypeEnum.markdown;
+    msgtype: "markdown";
     markdown: markdownContent;
     at?: At;
 }
@@ -54,7 +54,7 @@ interface markdownContent {
 
 // 整体跳转 ActionCard 消息类型
 type SingleActionCardMsgType = {
-    msgtype: MsgTypeEnum.actionCard;
+    msgtype: "actionCard";
     actionCard: SingleActionCardContent;
     at?: At;
 }
@@ -64,12 +64,12 @@ interface SingleActionCardContent {
     text: string; // 消息内容,markdown格式的消息,
     singleTitle: string; // 单个按钮的标题
     singleURL: string; // 点击singleTitle按钮触发的URL
-    btnOrientation: string; // 0-按钮竖直排列，1-按钮横向排列
+    btnOrientation?: string; // 0-按钮竖直排列，1-按钮横向排列
 }
 
 // 独立跳转 ActionCard 消息类型
 type BtnsActionCardMsgType = {
-    msgtype: MsgTypeEnum.actionCard;
+    msgtype: "actionCard";
     actionCard: BtnsActionCardContent;
     at?: At;
 }

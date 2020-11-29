@@ -4,7 +4,7 @@
   "description": "钉钉通知",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "autod": "autod",
     "build": "rm -rf dist && tsc"
   },
@@ -19,9 +19,13 @@
   },
   "homepage": "https://github.com/jjeejj/dingding-notify#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.15",
     "@types/superagent": "^4.1.10",
     "autod": "^3.1.1",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
   },
   "dependencies": {
     "superagent": "^6.1.0"
