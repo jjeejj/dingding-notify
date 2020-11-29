@@ -1,12 +1,17 @@
 {
   "name": "dingding-notify",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "钉钉通知",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "test": "jest",
     "autod": "autod",
-    "build": "rm -rf dist && tsc"
+    "clean": "rm -rf dist",
+    "compile": "tsc",
+    "prepublishOnly": "npm run clean && npm run compile"
   },
   "repository": {
     "type": "git",
