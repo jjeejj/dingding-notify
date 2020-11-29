@@ -96,3 +96,29 @@ test("通知 独立跳转ActionCard 类型的文本", async () => {
     });
     expect(body.errcode).toBe(0)
 });
+
+test("通知 FeedCard 类型的文本", async () => {
+    const dingding = new Dingding({
+        webhook: "https://oapi.dingtalk.com/robot/send?access_token=dec7f2c9b91a0c2fddccdb8ef61c6df769bc1993727eb9e621cfa38603917faf",
+        secret: "SEC5b81e90a502e21583d51f2711f4634c3a9ddf9f37dc3d97204157c1621520f08"
+    });
+
+    const body = await dingding.notity({
+        msgtype: "feedCard",
+        feedCard: {
+            links: [
+                {
+                    title: "时代的火车向前开", 
+                    messageURL: "https://www.dingtalk.com/s?__biz=MzA4NjMwMTA2Ng==&mid=2650316842&idx=1&sn=60da3ea2b29f1dcc43a7c8e4a7c97a16&scene=2&srcid=09189AnRJEdIiWVaKltFzNTw&from=timeline&isappinstalled=0&key=&ascene=2&uin=&devicetype=android-23&version=26031933&nettype=WIFI", 
+                    picURL: "https://www.dingtalk.com/"
+                },
+                {
+                    title: "时代的火车向前开2", 
+                    messageURL: "https://www.dingtalk.com/s?__biz=MzA4NjMwMTA2Ng==&mid=2650316842&idx=1&sn=60da3ea2b29f1dcc43a7c8e4a7c97a16&scene=2&srcid=09189AnRJEdIiWVaKltFzNTw&from=timeline&isappinstalled=0&key=&ascene=2&uin=&devicetype=android-23&version=26031933&nettype=WIFI", 
+                    picURL: "https://www.dingtalk.com/"
+                }
+            ]
+        }
+    });
+    expect(body.errcode).toBe(0)
+});

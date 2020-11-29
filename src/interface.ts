@@ -86,4 +86,20 @@ interface BtnsActionCardBtnsInfo {
     actionURL: string; //点击按钮触发的URL
 }
 
-export type SendMsyType = TextMsgType | LinkMsgType | MarkdowmMsgType | SingleActionCardMsgType | BtnsActionCardMsgType
+// FeedCard 消息类型
+type FeedCardMsgType = {
+    msgtype: "feedCard";
+    feedCard: FeedCardLinks;
+}
+// FeedCard 链接
+interface FeedCardLinks {
+    links: Array<FeedCardLinksContent>;
+}
+// FeedCard 链接 具体的内容
+interface FeedCardLinksContent {
+    title: string; // 消息标题
+    messageURL: string; // 点击单条信息到跳转链接
+    picURL: string; // 单条信息后面图片的URL
+}
+
+export type SendMsyType = TextMsgType | LinkMsgType | MarkdowmMsgType | SingleActionCardMsgType | BtnsActionCardMsgType | FeedCardMsgType
